@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'localizations.dart';
 
@@ -26,8 +25,8 @@ class _MyAppState extends State<MyApp> {
       locale: _currentLocale,
       localizationsDelegates: [
         const AppLocalizationsDelegate(), // <- Your custom delegate
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
+        DefaultMaterialLocalizations.delegate,
+        DefaultWidgetsLocalizations.delegate,
       ],
       supportedLocales: localizedLabels.keys.toList(), // <- Supported locales
       home: MyHomePage(

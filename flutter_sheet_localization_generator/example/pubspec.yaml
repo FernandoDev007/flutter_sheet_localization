@@ -13,17 +13,20 @@ description: A new Flutter project.
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
+publish_to: none
+
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.19.6 <4.0.0"
+  flutter: ">=2.5.0"
 
 dependencies:
-  flutter_sheet_localization:
   flutter_localizations:
     sdk: flutter
   flutter:
     sdk: flutter 
-  cupertino_icons: ^0.1.2
-  intl: ^0.17.0
+  cupertino_icons: ^1.0.6
+  intl: ^0.18.1
+  flutter_sheet_localization:
 
 dev_dependencies: 
   flutter_test:
