@@ -24,6 +24,9 @@ dependencies:
   collection: ^1.15.0
   intl: ^0.18.1
   flutter_sheet_localization:
+    git:
+      url: https://github.com/FernandoDev007/flutter_sheet_localization.git
+      path: flutter_sheet_localization
   template_string:
     git:
       url: https://github.com/FernandoDev007/flutter_sheet_localization.git
