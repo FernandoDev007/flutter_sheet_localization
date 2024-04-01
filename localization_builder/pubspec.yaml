@@ -16,7 +16,7 @@ dependencies:
   yaml: ^3.1.0
   equatable: ^2.0.0
   collection: ^1.15.0
-  http: ^0.13.1
+  http: ^1.2.1
   dart_style: ^2.0.0
   logging: ^1.0.0
   csv: ^5.0.0
