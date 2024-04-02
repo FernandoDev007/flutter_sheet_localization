@@ -24,6 +24,7 @@ dependencies:
     git:
       url: https://github.com/FernandoDev007/flutter_sheet_localization.git
       path: template_string
+      ref: inuba
 
 
 dev_dependencies:

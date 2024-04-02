@@ -30,6 +30,7 @@ dependencies:
     git:
       url: https://github.com/FernandoDev007/flutter_sheet_localization.git
       path: flutter_sheet_localization
+      ref: inuba
 
 dev_dependencies: 
   flutter_test:
@@ -39,6 +40,7 @@ dev_dependencies:
     git:
       url: https://github.com/FernandoDev007/flutter_sheet_localization.git
       path: flutter_sheet_localization_generator
+      ref: inuba
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
