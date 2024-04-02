@@ -25,7 +25,7 @@ dependencies:
   flutter:
     sdk: flutter 
   cupertino_icons: ^1.0.6
-  intl: ^0.18.1
+  intl: ">=0.19.0 <1.0.0"
   flutter_sheet_localization:
     git:
       url: https://github.com/FernandoDev007/flutter_sheet_localization.git
