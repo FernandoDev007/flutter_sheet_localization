@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/element2.dart';
+import 'package:build/build.dart';
 import 'package:csv/csv.dart';
 import 'package:flutter_sheet_localization/flutter_sheet_localization.dart';
+import 'package:http/http.dart' as http;
 import 'package:localization_builder/localization_builder.dart';
 import 'package:source_gen/source_gen.dart';
-import 'package:build/build.dart';
-import 'package:http/http.dart' as http;
 
 class SheetLocalizationGenerator
     extends GeneratorForAnnotation<SheetLocalization> {
@@ -15,16 +15,16 @@ class SheetLocalizationGenerator
 
   @override
   FutureOr<String> generateForAnnotatedElement(
-      Element element, ConstantReader annotation, BuildStep buildStep) async {
-    if (element is! ClassElement) {
-      final name = element.name;
+      Element2 element, ConstantReader annotation, BuildStep buildStep) async {
+    if (element is! ClassElement2) {
+      final name = element.name3;
       throw InvalidGenerationSourceError('Generator cannot target `$name`.',
           todo: 'Remove the SheetLocalization annotation from `$name`.',
           element: element);
     }
 
-    if (!element.name.endsWith('Delegate')) {
-      final name = element.name;
+    if (!element.name3!.endsWith('Delegate')) {
+      final name = element.name3;
       throw InvalidGenerationSourceError(
           'Generator for target `$name` should have a name that ends with `Delegate`.',
           todo:
@@ -43,15 +43,16 @@ class SheetLocalizationGenerator
         element: element,
       ),
     );*/
-    final name = '${element.name.replaceAll('Delegate', '')}Data';
+    final name = '${element.name3!.replaceAll('Delegate', '')}Data';
     final docId = annotation.objectValue.getField('docId')!.toStringValue();
     final sheetId = annotation.objectValue.getField('sheetId')!.toStringValue();
+    final forWeb = annotation.objectValue.getField('forWeb')?.toBoolValue() ?? false;
     var localizations = await _downloadGoogleSheet(
       docId!,
       sheetId!,
       name,
     );
-    final builder = DartLocalizationBuilder();
+    final builder = DartLocalizationBuilder(forWeb: forWeb);
     final code = StringBuffer();
     code.writeln(builder.build(localizations));
     return code.toString();

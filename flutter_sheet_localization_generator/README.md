@@ -61,6 +61,18 @@ class AppLocalizationsDelegate
 
 ```
 
+#### Web Compatibility
+
+If you're building for web, you can disable the generation of `hashCode` and equality operators (`==`) which can cause issues on web platforms. Simply add `forWeb: true` to your annotation:
+
+```dart
+@SheetLocalization("DOCID", "SHEETID", 1, forWeb: true)
+class AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizationsData> {
+  // ...
+}
+```
+
 #### 3. Generate your localizations
 
 Run the following command to generate a `lib/localization.g.dart` file :

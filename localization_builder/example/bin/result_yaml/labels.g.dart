@@ -2,59 +2,59 @@ import 'package:intl/locale.dart';
 import 'package:template_string/template_string.dart';
     
 final localizedLabels = <Locale, Example>{
-  Locale.fromSubtags(languageCode: 'fr'): const Example(
+  Locale.fromSubtags(languageCode: 'fr'): Example(
     multiline: 'C\'est\nune\nexemple multiligne.',
-    dates: const ExampleDates(
-      weekday: const ExampleDatesWeekday(
+    dates: ExampleDates(
+      weekday: ExampleDatesWeekday(
         monday: 'lundi',
         tuesday: 'mardi',
         wednesday: 'mercredi',
       ),
     ),
-    templated: const ExampleTemplated(
+    templated: ExampleTemplated(
       hello: 'Bonjour {{first_name}}!',
       contactMale: 'M. {{last_name}}',
       contactFemale: 'Mme. {{last_name}}',
-      numbers: const ExampleTemplatedNumbers(
+      numbers: ExampleTemplatedNumbers(
         count: 'Il y a {{count:int}} éléments.',
         simple: 'Le prix est de {{price:double}}€',
         formatted: 'Le prix est de {{price:double[compactCurrency]}}',
       ),
-      date: const ExampleTemplatedDate(
+      date: ExampleTemplatedDate(
         simple: 'Aujourd\'hui : {{date:DateTime}}',
         pattern: 'Aujourd\'hui : {{date:DateTime[EEE, M/d/y]}}',
       ),
     ),
-    plurals: const ExamplePlurals(
+    plurals: ExamplePlurals(
       manZero: 'hommes',
       manOne: 'homme',
       manMultiple: 'hommes',
     ),
   ),
-  Locale.fromSubtags(languageCode: 'en', countryCode: 'US'): const Example(
+  Locale.fromSubtags(languageCode: 'en', countryCode: 'US'): Example(
     multiline: '?',
-    dates: const ExampleDates(
-      weekday: const ExampleDatesWeekday(
+    dates: ExampleDates(
+      weekday: ExampleDatesWeekday(
         monday: '?',
         tuesday: '?',
         wednesday: '?',
       ),
     ),
-    templated: const ExampleTemplated(
+    templated: ExampleTemplated(
       hello: '?',
       contactMale: '?',
       contactFemale: '?',
-      numbers: const ExampleTemplatedNumbers(
+      numbers: ExampleTemplatedNumbers(
         count: '?',
         simple: '?',
         formatted: '?',
       ),
-      date: const ExampleTemplatedDate(
+      date: ExampleTemplatedDate(
         simple: '?',
         pattern: '?',
       ),
     ),
-    plurals: const ExamplePlurals(
+    plurals: ExamplePlurals(
       manZero: '?',
       manOne: '?',
       manMultiple: '?',
@@ -72,7 +72,7 @@ enum Plural {
 }
 
 class Example {
-  const Example({
+  Example({
     required this.dates,
     required this.templated,
     required this.plurals,
@@ -123,7 +123,7 @@ class Example {
 }
 
 class ExampleDates {
-  const ExampleDates({
+  ExampleDates({
     required this.weekday,
   });
 
@@ -149,7 +149,7 @@ class ExampleDates {
 }
 
 class ExampleDatesWeekday {
-  const ExampleDatesWeekday({
+  ExampleDatesWeekday({
     required this.monday,
     required this.tuesday,
     required this.wednesday,
@@ -192,7 +192,7 @@ class ExampleDatesWeekday {
 }
 
 class ExampleTemplated {
-  const ExampleTemplated({
+  ExampleTemplated({
     required this.numbers,
     required this.date,
     required String hello,
@@ -284,7 +284,7 @@ class ExampleTemplated {
 }
 
 class ExampleTemplatedNumbers {
-  const ExampleTemplatedNumbers({
+  ExampleTemplatedNumbers({
     required String count,
     required String simple,
     required String formatted,
@@ -360,7 +360,7 @@ class ExampleTemplatedNumbers {
 }
 
 class ExampleTemplatedDate {
-  const ExampleTemplatedDate({
+  ExampleTemplatedDate({
     required String simple,
     required String pattern,
   })   : _simple = simple,
@@ -416,7 +416,7 @@ class ExampleTemplatedDate {
 }
 
 class ExamplePlurals {
-  const ExamplePlurals({
+  ExamplePlurals({
     required String manZero,
     required String manOne,
     required String manMultiple,

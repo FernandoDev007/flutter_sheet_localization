@@ -1,15 +1,16 @@
 import 'dart:ui';
+
 import 'package:template_string/template_string.dart';
 
 final localizedLabels = <Locale, Example>{
-  Locale.fromSubtags(languageCode: 'fr'): const Example(
+  Locale.fromSubtags(languageCode: 'fr'): Example(
     multiline: 'C\'est\n\nune\n\nexemple multiligne.',
-    plurals: const ExamplePlurals(
+    plurals: ExamplePlurals(
       manMultiple: 'hommes',
       manOne: 'homme',
       manZero: 'hommes',
     ),
-    templated: const ExampleTemplated(
+    templated: ExampleTemplated(
       pattern: 'Aujourd\'hui : {{date:DateTime[EEE, M/d/y]}}',
       simple: 'Aujourd\'hui : {{date:DateTime}}',
       formatted: 'Le prix est de {{price:double[compactCurrency]}}',
@@ -17,17 +18,17 @@ final localizedLabels = <Locale, Example>{
       contactFemale: 'Mme {{last_name}}',
       contactMale: 'M. {{last_name}}',
       hello: 'Bonjour {{first_name}}!',
-      date: const ExampleTemplatedDate(
+      date: ExampleTemplatedDate(
         pattern: 'Aujourd\'hui : {{date:DateTime[EEE, M/d/y]}}',
         simple: 'Aujourd\'hui : {{date:DateTime}}',
       ),
-      numbers: const ExampleTemplatedNumbers(
+      numbers: ExampleTemplatedNumbers(
         formatted: 'Le prix est de {{price:double[compactCurrency]}}',
         simple: 'Le prix est de {{price:double}}€',
         count: 'Il y a {{count:int}} éléments.',
       ),
     ),
-    dates: const ExampleDates(
+    dates: ExampleDates(
       april: 'avril',
       march: 'février',
       february: 'février',
@@ -39,13 +40,13 @@ final localizedLabels = <Locale, Example>{
       wednesday: 'Mercredi',
       tuesday: 'Mardi',
       monday: 'LUNDI',
-      month: const ExampleDatesMonth(
+      month: ExampleDatesMonth(
         april: 'avril',
         march: 'février',
         february: 'février',
         january: 'janvier',
       ),
-      weekday: const ExampleDatesWeekday(
+      weekday: ExampleDatesWeekday(
         sunday: 'dimanche',
         saturday: 'samedi',
         friday: 'Vendredi',
@@ -56,14 +57,14 @@ final localizedLabels = <Locale, Example>{
       ),
     ),
   ),
-  Locale.fromSubtags(languageCode: 'en'): const Example(
+  Locale.fromSubtags(languageCode: 'en'): Example(
     multiline: 'This is\n\na\n\nmultiline example.',
-    plurals: const ExamplePlurals(
+    plurals: ExamplePlurals(
       manMultiple: 'men',
       manOne: 'man',
       manZero: 'man',
     ),
-    templated: const ExampleTemplated(
+    templated: ExampleTemplated(
       pattern: 'Today : {{date:DateTime[EEE, M/d/y]}}',
       simple: 'Today : {{date:DateTime}}',
       formatted: 'The price is {{price:double[compactCurrency]}}',
@@ -71,17 +72,17 @@ final localizedLabels = <Locale, Example>{
       contactFemale: 'Mrs {{last_name}}!',
       contactMale: 'Mr {{last_name}}!',
       hello: 'Hello {{first_name}}!',
-      date: const ExampleTemplatedDate(
+      date: ExampleTemplatedDate(
         pattern: 'Today : {{date:DateTime[EEE, M/d/y]}}',
         simple: 'Today : {{date:DateTime}}',
       ),
-      numbers: const ExampleTemplatedNumbers(
+      numbers: ExampleTemplatedNumbers(
         formatted: 'The price is {{price:double[compactCurrency]}}',
         simple: 'The price is {{price:double}}\$',
         count: 'There are {{count:int}}\ items.',
       ),
     ),
-    dates: const ExampleDates(
+    dates: ExampleDates(
       april: 'april',
       march: 'march',
       february: 'february',
@@ -93,13 +94,13 @@ final localizedLabels = <Locale, Example>{
       wednesday: 'wednesday',
       tuesday: 'tuesday',
       monday: 'MONDAY',
-      month: const ExampleDatesMonth(
+      month: ExampleDatesMonth(
         april: 'april',
         march: 'march',
         february: 'february',
         january: 'january',
       ),
-      weekday: const ExampleDatesWeekday(
+      weekday: ExampleDatesWeekday(
         sunday: 'sunday',
         saturday: 'saturday',
         friday: 'friday',
@@ -111,14 +112,14 @@ final localizedLabels = <Locale, Example>{
     ),
   ),
   Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'):
-      const Example(
+      Example(
     multiline: '这是\n\n一种\n\n多例子。',
-    plurals: const ExamplePlurals(
+    plurals: ExamplePlurals(
       manMultiple: '男人',
       manOne: '男人',
       manZero: '男人',
     ),
-    templated: const ExampleTemplated(
+    templated: ExampleTemplated(
       pattern: '今日 : {{date:DateTime[EEE, M/d/y]}}',
       simple: '今日 : {{date:DateTime}}',
       formatted: '価格は{{price:double[compactCurrency]}}です',
@@ -126,17 +127,17 @@ final localizedLabels = <Locale, Example>{
       contactFemale: '夫人{{last_name}}',
       contactMale: '先生{{last_name}}',
       hello: '你好{{first_name}}!',
-      date: const ExampleTemplatedDate(
+      date: ExampleTemplatedDate(
         pattern: '今日 : {{date:DateTime[EEE, M/d/y]}}',
         simple: '今日 : {{date:DateTime}}',
       ),
-      numbers: const ExampleTemplatedNumbers(
+      numbers: ExampleTemplatedNumbers(
         formatted: '価格は{{price:double[compactCurrency]}}です',
         simple: '価格は{{price:double}}¥です',
         count: '{{count:int}}個のアイテムがあります',
       ),
     ),
-    dates: const ExampleDates(
+    dates: ExampleDates(
       april: '四月',
       march: '游行',
       february: '二月',
@@ -148,13 +149,13 @@ final localizedLabels = <Locale, Example>{
       wednesday: '星期三',
       tuesday: '星期二',
       monday: '星期一',
-      month: const ExampleDatesMonth(
+      month: ExampleDatesMonth(
         april: '四月',
         march: '游行',
         february: '二月',
         january: '一月',
       ),
-      weekday: const ExampleDatesWeekday(
+      weekday: ExampleDatesWeekday(
         sunday: '星期日',
         saturday: '星期六',
         friday: '星期五',
@@ -177,7 +178,7 @@ enum Gender {
 }
 
 class Example {
-  const Example({
+  Example({
     required this.plurals,
     required this.templated,
     required this.dates,
@@ -228,7 +229,7 @@ class Example {
 }
 
 class ExamplePlurals {
-  const ExamplePlurals({
+  ExamplePlurals({
     required String manMultiple,
     required String manOne,
     required String manZero,
@@ -288,7 +289,7 @@ class ExamplePlurals {
 }
 
 class ExampleTemplated {
-  const ExampleTemplated({
+  ExampleTemplated({
     required this.date,
     required this.numbers,
     required String pattern,
@@ -452,7 +453,7 @@ class ExampleTemplated {
 }
 
 class ExampleTemplatedDate {
-  const ExampleTemplatedDate({
+  ExampleTemplatedDate({
     required String pattern,
     required String simple,
   })   : _pattern = pattern,
@@ -508,7 +509,7 @@ class ExampleTemplatedDate {
 }
 
 class ExampleTemplatedNumbers {
-  const ExampleTemplatedNumbers({
+  ExampleTemplatedNumbers({
     required String formatted,
     required String simple,
     required String count,
@@ -584,7 +585,7 @@ class ExampleTemplatedNumbers {
 }
 
 class ExampleDates {
-  const ExampleDates({
+  ExampleDates({
     required this.month,
     required this.weekday,
     required this.april,
@@ -698,7 +699,7 @@ class ExampleDates {
 }
 
 class ExampleDatesMonth {
-  const ExampleDatesMonth({
+  ExampleDatesMonth({
     required this.april,
     required this.march,
     required this.february,
@@ -748,7 +749,7 @@ class ExampleDatesMonth {
 }
 
 class ExampleDatesWeekday {
-  const ExampleDatesWeekday({
+  ExampleDatesWeekday({
     required this.sunday,
     required this.saturday,
     required this.friday,

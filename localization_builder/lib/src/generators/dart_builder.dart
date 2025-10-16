@@ -14,11 +14,13 @@ class DartLocalizationBuilder {
   DartLocalizationBuilder({
     this.nullSafety = true,
     this.jsonParser = true,
+    this.forWeb = false,
   });
 
   StringBuffer _buffer = StringBuffer();
   final bool nullSafety;
   final bool jsonParser;
+  final bool forWeb;
 
   String buildImports() {
     return '''
@@ -43,7 +45,7 @@ import 'package:template_string/template_string.dart';
       ],
       localizations,
     );
-    return DartFormatter().format(_buffer.toString());
+    return DartFormatter(languageVersion: DartFormatter.latestLanguageVersion).format(_buffer.toString());
   }
 
   void _createLocalization(List<String> path, Localizations localizations) {
@@ -273,6 +275,7 @@ import 'package:template_string/template_string.dart';
       result.build(
         nullSafety: nullSafety,
         jsonParser: jsonParser,
+        equalityComparer: !forWeb,
       ),
     );
 
